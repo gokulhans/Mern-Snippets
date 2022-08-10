@@ -23,7 +23,7 @@ function Upload() {
 
       <Form>
         <Form.Group className="mb-3">
-          <Form.Label>Code Name</Form.Label>
+          <Form.Label>Action Name</Form.Label>
           <Form.Control type="name" onChange={(e) => { setName(e.target.value) }} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">

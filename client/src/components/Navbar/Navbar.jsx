@@ -26,6 +26,7 @@ function AppNavbar() {
               <Nav.Link as={Link} to="/register">Register</Nav.Link>
               <Nav.Link as={Link} to="/upload">Upload</Nav.Link>
               <Nav.Link as={Link} to="/editcode">Editcode</Nav.Link>
+              <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
              
             </Nav>
             <Form className="d-flex">

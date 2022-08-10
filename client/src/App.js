@@ -6,6 +6,7 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Upload from "./pages/Upload/Upload";
 import Editcode from "./pages/Editcode/Editcode";
+import Blog from "./pages/Blog/Blog";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/editcode" element={<Editcode />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
     </div>
     </>

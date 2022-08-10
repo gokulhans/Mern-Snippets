@@ -1,25 +1,18 @@
 import React from 'react'
-// import Blogcard from '../../components/Blogcard/Blogcard';
 import './Blog.css'
-import {ReactEmbedGist} from 'react-embed-gist';
+import Frame from 'react-frame-component';
 
 function Blog() {
-    
+
     return (
         <div className='blogbody'>
-            <h3>STARTING</h3>
-            <script src="https://gist.github.com/gokulhans/b8aef855d2d43a95eae20d41eeea93ba.js"></script>
-            {/* <Blogcard data = 'code'/> */}
 
-            <ReactEmbedGist
-     gist="gokulhans/b8aef855d2d43a95eae20d41eeea93ba"
-     wrapperClass="gist__bash"
-     loadingClass="loading__screen"
-     titleClass="gist__title"
-     errorClass="gist__error"
-     contentClass="gist__content"
-     file=".bash_profile.sh"
-   />
+            <h4 className='subhead'>Create Node Server</h4>
+            <Frame width="100%" height="300px" initialContent='<script src="https://gist.github.com/gokulhans/f9d9acfa67663dda92a9ff36c1793325.js"></script>' />
+        
+            <h4 className='subhead'>Connect MongoDB Database</h4>
+            <Frame width="100%" height="300px" initialContent='<script src="https://gist.github.com/gokulhans/6b4aa66a16d8b7e575a17e07665d7f2b.js"></script>' />
+        
         </div>
     )
 }

@@ -24,7 +24,9 @@ const PORT = 5000
 // }).then(() => {
 //     console.log('Database connected..')
 // })
-
+app.get('/',(req,res)=>{
+    res.send("hlo");
+})
 app.post('/uploadcode', async (req, res) => {
 
     // const mernCode = new CodeBook(req.body)

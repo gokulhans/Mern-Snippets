@@ -36,6 +36,8 @@ app.post('/uploadcode', async (req, res) => {
 
     try {
         // await mernCode.save()
+        
+        db.get().collection('codes').insertOne(code)
         db.get().collection('frontend').insertOne({ action: code.name, code: code.design, frontend: "reactjs" })
         db.get().collection('backend').insertOne({ action: code.name, code: code.node, backend: "nodejs" })
         db.get().collection('linking').insertOne({ action: code.name, code: code.react, frontend: "reactjs" })

@@ -11,7 +11,7 @@ function Upload() {
   const [design, setDesign] = useState(0)
 
   const uploadCode = () => {
-    Axios.post('http://localhost:5000/uploadcode', { name, node, react, mongoose, design })
+    Axios.post('/uploadcode', { name, node, react, mongoose, design })
     console.log("called");
     console.log(name,node,react,mongoose,design);
   }

@@ -14,7 +14,7 @@ function Home() {
   }, [])
 
   const deleteCode = (id) => {
-    axios.delete(`http://localhost:5000/deletecode/${id}`)
+    axios.delete(`/deletecode/${id}`)
     window.location.reload(true);
   }
 
@@ -25,7 +25,7 @@ function Home() {
   const [design, setDesign] = useState(0)
 
   const updateCode = async (id) => {
-    await axios.put(`http://localhost:5000/updatecode/${id}`, { id, name, node, react, mongoose, design })
+    await axios.put(`/updatecode/${id}`, { id, name, node, react, mongoose, design })
     window.location.reload(true);
   }
 

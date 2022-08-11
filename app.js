@@ -33,14 +33,14 @@ app.post('/uploadcode', async (req, res) => {
     let code = req.body;
 
 
-    
+
     try {
         // await mernCode.save()
-        db.get().collection('frontend').insertOne({action:code.name,code:code.design,frontend:"reactjs"})
-        db.get().collection('backend').insertOne({action:code.name,code:code.node,backend:"nodejs"})
-        db.get().collection('linking').insertOne({action:code.name,code:code.react,frontend:"reactjs"})
+        db.get().collection('frontend').insertOne({ action: code.name, code: code.design, frontend: "reactjs" })
+        db.get().collection('backend').insertOne({ action: code.name, code: code.node, backend: "nodejs" })
+        db.get().collection('linking').insertOne({ action: code.name, code: code.react, frontend: "reactjs" })
         db.get().collection('database').insertOne({ action: code.name, code: code.mongoose, db: "mongoose" })
-        
+
         res.status(201).json({
             status: 'Success',
             data: {
@@ -59,25 +59,26 @@ app.get('/findcode/:query', async (req, res) => {
     console.log(req.params.query);
 
     let query = req.params.query;
-    let frontend = await db.get().collection('frontend').findOne({action:query})
-    let backend = await db.get().collection('backend').findOne({action:query})
-    let linking = await db.get().collection('linking').findOne({action:query})
+    let frontend = await db.get().collection('frontend').findOne({ action: query })
+    let backend = await db.get().collection('backend').findOne({ action: query })
+    let linking = await db.get().collection('linking').findOne({ action: query })
     let database = await db.get().collection('db').findOne({ action: query })
-    
-    console.log(frontend,backend,linking,database);
+
+    console.log(frontend, backend, linking, database);
 })
 
 
 app.get('/getcodes', async (req, res) => {
     // const mernCode = await CodeBook.find({})
     let codes = await db.get().collection('codes').find().toArray()
+    console.log(codes);
     try {
-        res.status(200).json({
+        res.status(200).json(codes)
+        /*
+        {
             status: 'Success',
-            data: {
-                codes
-            }
-        })
+            data:codes
+        } */
     } catch (err) {
         res.status(500).json({
             status: 'Failed',
@@ -95,7 +96,9 @@ app.put('/updatecode/:id', async (req, res) => {
     let obj = { _id: ObjectId(req.params.id) }
     var query = {
         $set: {
-            name: req.body.name, gmail: req.body.gmail
+            name: req.body.name, node: req.body.node,
+            react: req.body.react, mongoose: req.body.mongoose,
+            design: req.body.design
         }
     }
 
@@ -103,6 +106,7 @@ app.put('/updatecode/:id', async (req, res) => {
 
     console.log(updatedCode);
     try {
+
         res.status(200).json({
             status: 'Success',
             data: {
@@ -145,6 +149,15 @@ app.delete('/deletecode/:id', async (req, res) => {
 //       });
 // });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on PORT ${PORT}...`)
+// server listening
+
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`server is listening on ${PORT}`);
 })
+
+if (process.env.NODE_ENV == 'production') {
+    app.use(express.static('client/build'));
+    app.get('*', function (req, res) {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}

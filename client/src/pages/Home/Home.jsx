@@ -8,7 +8,8 @@ function Home() {
 
   useEffect(() => {
     axios.get('http://localhost:5000/getcodes').then(res => {
-      setCodebook(res.data.data.mernCode)
+      console.log(res.data);
+      setCodebook(res.data)
     })
   }, [])
 
@@ -29,7 +30,7 @@ function Home() {
   }
 
   return (
-    <div className="container">
+    <div className="">
 
       <br />
       <h1>CodeList</h1>
@@ -138,7 +139,7 @@ function Home() {
         </Col>
       </Row>
 <br />
-
+Mapping 
       {
         codebook.map((val, key) => {
           return <div key={key}>

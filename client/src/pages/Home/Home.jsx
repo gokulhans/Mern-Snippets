@@ -7,7 +7,7 @@ function Home() {
   const [codebook, setCodebook] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:5000/getcodes').then(res => {
+    axios.get('/getcodes').then(res => {
       console.log(res.data);
       setCodebook(res.data)
     })

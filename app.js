@@ -24,7 +24,7 @@ const PORT = 5000
 // }).then(() => {
 //     console.log('Database connected..')
 // })
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.send("hlo");
 })
 app.post('/uploadcode', async (req, res) => {
@@ -38,7 +38,7 @@ app.post('/uploadcode', async (req, res) => {
 
     try {
         // await mernCode.save()
-        
+
         db.get().collection('codes').insertOne(code)
         db.get().collection('frontend').insertOne({ action: code.name, code: code.design, frontend: "reactjs" })
         db.get().collection('backend').insertOne({ action: code.name, code: code.node, backend: "nodejs" })
@@ -113,8 +113,10 @@ app.put('/updatecode/:id', async (req, res) => {
     let obj = { _id: ObjectId(req.params.id) }
     var query = {
         $set: {
-            name: req.body.name, node: req.body.node,
-            react: req.body.react, mongoose: req.body.mongoose,
+            name: req.body.name,
+            node: req.body.node,
+            react: req.body.react,
+            mongoose: req.body.mongoose,
             design: req.body.design
         }
     }
@@ -123,7 +125,6 @@ app.put('/updatecode/:id', async (req, res) => {
 
     console.log(updatedCode);
     try {
-
         res.status(200).json({
             status: 'Success',
             data: {

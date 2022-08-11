@@ -10,7 +10,7 @@ function Home() {
   const [codebook, setCodebook] = useState([])
 
   useEffect(() => {
-    axios.get('/getcodes').then(res => {
+    axios.get('http://code-snippets-mern.herokuapp.com/getcodes').then(res => {
       console.log(res.data);
       setCodebook(res.data)
     })

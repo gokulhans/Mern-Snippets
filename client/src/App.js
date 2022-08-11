@@ -1,3 +1,4 @@
+import React from 'react'
 import { Routes,Route,} from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
@@ -7,6 +8,7 @@ import Login from "./pages/Login/Login";
 import Upload from "./pages/Upload/Upload";
 import Editcode from "./pages/Editcode/Editcode";
 import Blog from "./pages/Blog/Blog";
+import Code from "./pages/Code/Code";
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route path="/upload" element={<Upload />} />
           <Route path="/editcode" element={<Editcode />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/codegen" element={<Code />} />
         </Routes>
     </div>
     </>

@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import React,{useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import Axios from 'axios'
 
@@ -12,9 +12,9 @@ function Upload() {
 
   const uploadCode = () => {
     Axios.post('/uploadcode', { name, node, react, mongoose, design })
-    console.log("called");
-    console.log(name,node,react,mongoose,design);
+
   }
+
 
   return (
     <div className="minw minh">
@@ -42,7 +42,7 @@ function Upload() {
           <Form.Label>Design</Form.Label>
           <Form.Control as="textarea" rows={3} onChange={(e) => { setDesign(e.target.value) }} />
         </Form.Group>
-        <Button variant="primary" onClick={uploadCode} type="submit">
+        <Button variant="primary" onClick={uploadCode}>
           Upload
         </Button>
       </Form>

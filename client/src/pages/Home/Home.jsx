@@ -1,6 +1,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav';
 
 function Home() {
 
@@ -31,6 +34,18 @@ function Home() {
 
   return (
     <div className="">
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/9/94/MERN-logo.png" />
+        <Card.Body>
+          <Card.Title>MERN</Card.Title>
+          <Card.Text>
+            Create A MERN Project with snippets
+          </Card.Text>
+         
+          <Nav.Link as={Link} to="/codegen"> Go</Nav.Link>
+
+        </Card.Body>
+      </Card>
 
       <br />
       <h1>CodeList</h1>
@@ -40,9 +55,9 @@ function Home() {
           <Card style={{ width: '35vw' }}>
             <Card.Body>
               <Card.Title>Node</Card.Title>
-              
-                <pre>
-                  <code>{`
+
+              <pre>
+                <code>{`
         class GFG
         {
             // Program begins with a call to main()
@@ -54,9 +69,9 @@ function Home() {
         }
 
           `}
-                  </code>
-                </pre>
-             
+                </code>
+              </pre>
+
             </Card.Body>
           </Card>
         </Col>
@@ -64,9 +79,9 @@ function Home() {
           <Card style={{ width: '35vw' }}>
             <Card.Body>
               <Card.Title>React</Card.Title>
-              
-                <pre>
-                  <code>{`
+
+              <pre>
+                <code>{`
         class GFG
         {
             // Program begins with a call to main()
@@ -78,9 +93,9 @@ function Home() {
         }
 
           `}
-                  </code>
-                </pre>
-             
+                </code>
+              </pre>
+
             </Card.Body>
           </Card>
         </Col>
@@ -92,9 +107,9 @@ function Home() {
           <Card style={{ width: '35vw' }}>
             <Card.Body>
               <Card.Title>Mongoose</Card.Title>
-              
-                <pre>
-                  <code>{`
+
+              <pre>
+                <code>{`
         class GFG
         {
             // Program begins with a call to main()
@@ -106,9 +121,9 @@ function Home() {
         }
 
           `}
-                  </code>
-                </pre>
-             
+                </code>
+              </pre>
+
             </Card.Body>
           </Card>
         </Col>
@@ -117,9 +132,9 @@ function Home() {
           <Card style={{ width: '35vw' }}>
             <Card.Body>
               <Card.Title>Design</Card.Title>
-              
-                <pre>
-                  <code>{`
+
+              <pre>
+                <code>{`
         class GFG
         {
             // Program begins with a call to main()
@@ -131,15 +146,15 @@ function Home() {
         }
 
           `}
-                  </code>
-                </pre>
-             
+                </code>
+              </pre>
+
             </Card.Body>
           </Card>
         </Col>
       </Row>
-<br />
-Mapping 
+      <br />
+      Mapping
       {
         codebook.map((val, key) => {
           return <div key={key}>

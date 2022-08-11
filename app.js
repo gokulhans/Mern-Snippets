@@ -59,6 +59,19 @@ app.post('/uploadcode', async (req, res) => {
     }
 })
 
+app.post('/getsnippets/', async (req, res) => {
+    console.log(req.body);
+    let query = req.body.action;
+    let frontend = await db.get().collection('frontend').findOne({ action: query })
+    let backend = await db.get().collection('backend').findOne({ action: query })
+    let linking = await db.get().collection('linking').findOne({ action: query })
+    let database = await db.get().collection('db').findOne({ action: query })
+
+    console.log(frontend, backend, linking, database);
+    res.json([frontend, backend, linking, database])
+
+})
+
 app.get('/findcode/:query', async (req, res) => {
     console.log(req.params.query);
 

@@ -24,15 +24,30 @@ function Blog() {
           
             <h4 className='subhead'>Connect MongoDB Database</h4>
             <Frame className='frame' width="80%" height="300px" initialContent='<script src="https://gist.github.com/gokulhans/6b4aa66a16d8b7e575a17e07665d7f2b.js"></script>' />
-            
-            <h4 className='subhead'>Create Demo PhoneBook model</h4>
-            <Frame className='frame' width="80%" height="300px" initialContent='<script src="https://gist.github.com/gokulhans/6b4aa66a16d8b7e575a17e07665d7f2b.js"></script>' />
             <small className='small'>After connecting the MongoDB database, it is time to create our database schema model. That will give the shape of the data and define how the data will be stored in the database. We will create it into a separate folder and will name it Model and inside the model folder, we will create a folder named PhoneBook.js Inside this folder, we will create a simple database schema model. See the below code example:</small>
             
-  
-            {/* <h4 className='subhead'></h4>
-            <code className='code'></code>
-            <small className='small'></small> */}
+            <h4 className='subhead'>Create Mongoose model</h4>
+            <Frame className='frame' width="80%" height="430px" initialContent='<script src="https://gist.github.com/gokulhans/d409a440b77f4eed74ebfd604c0c34ab.js"></script>' />
+            <small className='small'>Here, you can see that we have created a schema model where we will store two types of data. One is the name which type is String and another one is the phone which type is Number We also set them as required: true as a result, it will throw a mongo error if any fields remain empty. Finally, we have exported this schema model so that we can use it by importing it into another file.</small>
+            
+
+            <h4 className='subhead'><b>Environment setup for Frontend</b></h4>
+
+            {/* <Frame className='frame' width="80%" height="290px" initialContent='' /> */}
+            <code className="code"></code>
+            <small className='small'></small>
+            <h4 className='subhead'><b>Environment setup for Frontend</b></h4>
+
+            {/* <Frame className='frame' width="80%" height="290px" initialContent='' /> */}
+            <code className="code">npx create-react-app client</code>
+            <small className='small'></small>
+            <h4 className='subhead'><b>Environment setup for Frontend</b></h4>
+
+            {/* <Frame className='frame' width="80%" height="290px" initialContent='' /> */}
+            <code className="code"></code>
+            <small className='small'></small>
+
+
         </div>
     )
 }

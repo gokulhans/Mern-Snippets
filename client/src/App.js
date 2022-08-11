@@ -9,6 +9,7 @@ import Upload from "./pages/Upload/Upload";
 import Editcode from "./pages/Editcode/Editcode";
 import Blog from "./pages/Blog/Blog";
 import Code from "./pages/Code/Code";
+import Mainhome from './Mainhome';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
     <div className="App">
       <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Mainhome />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/upload" element={<Upload />} />

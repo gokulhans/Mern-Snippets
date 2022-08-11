@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 function Blog() {
-var text ='We have successfully completed our BASE application using the MERN stack. In this whole tutorial, we have covered, how you can start a nodejs server and connect it with mongoose.And how to start react server. If you have completed this tutorial, now you are ready to build your own CRUD application that will be based on the MERN stack. But there are a lot more things to do. Reffer '
+
     return (
         <div className='blogbody'>
 
@@ -41,7 +41,8 @@ var text ='We have successfully completed our BASE application using the MERN st
 
             <div><br /></div>
             <div><br /></div>
-            <small className='small'>{text}<Link as={Link} to="/codegen">here</Link> </small>
+            <small className='small'>We have successfully completed our BASE application using the MERN stack. In this whole tutorial, we have covered, how you can start a nodejs server and connect it with mongoose.And how to start react server. If you have completed this tutorial, now you are ready to build your own CRUD application that will be based on the MERN stack. But there are a lot more things to do. Reffer below</small>
+            <Link as={Link} to="/codegen">click here</Link> 
 
             {/* <Frame className='frame' width="80%" height="290px" initialContent='' />
             <code className="code"></code>

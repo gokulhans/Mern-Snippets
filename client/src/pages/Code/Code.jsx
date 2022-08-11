@@ -29,36 +29,34 @@ function Code() {
     <div className='minw minh'>
  <label htmlFor="">Action</label>
  <Form.Select aria-label="Default select example" onChange={e=>setAction(e.target.value)}>
-      <option>Open this select menu</option>
-      <option value="sign">Login</option>
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+      <option value="d">d</option>
     </Form.Select>
 
     <label htmlFor="">FrontEnd</label>
 
  <Form.Select aria-label="Default select example" onChange={e=>setfe(e.target.value)}>
-      <option>Open this select menu</option>
       <option value="reactjs">React JS</option>
       
     </Form.Select>
     <label htmlFor="">Backend</label>
 
  <Form.Select aria-label="Default select example" onChange={e=>setbe(e.target.value)}>
-      <option>Open this select menu</option>
       <option value="nodejs">Node JS</option>
  
     </Form.Select>
     <label htmlFor="">Database</label>
 
     <Form.Select aria-label="Default select example" onChange={e=>setdb(e.target.value)}>
-      <option>Open this select menu</option>
       <option value="mongoose">Mongoose</option>
       <option value="1">Mongodb</option>
      
     </Form.Select>
     <label htmlFor="">Linking</label>
-
+    
     <Form.Select aria-label="Default select example" onChange={e=>setlink(e.target.value)}>
-      <option>Open this select menu</option>
       <option value="linkreact">React</option>
     </Form.Select>
 <br />
